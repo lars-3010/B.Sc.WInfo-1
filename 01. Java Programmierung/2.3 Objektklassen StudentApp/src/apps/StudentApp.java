@@ -1,33 +1,37 @@
+package apps;
+
 import model.Location;
 import model.Student;
 import utilities.IdFactory;
 
-package apps;
+/**
+ * This is the class "StudentApp" which uses the class Student
+ * @author Katrin W.
+ *
+ */
 public class StudentApp {
-    public static void main(String[] args) {
-        
-        // alte Varianten: 
 
-//        Student student1 = new Student();
-//        Student student1 = new Student(67453, "Philipp");
-//        Student studi4 = new Student(10004);
-//        Student studi5 = new Student(10005,"Norbert Mueller");
+public static void main(String[] args) {
+		Student student1 = new Student();
+		Student student2 = new Student();
+		
+		System.out.println(student1); 
+		System.out.println(student1.getName()); //aktueller Name
+		System.out.println(student1.getId()); //aktuelle Id
+		
+		student1.setName("Peter Pan");
+		
+		System.out.println(student1); 
+		
+	    System.out.println("Number of available Id's: "+  IdFactory.getNoOfAvailableIds());
+	    System.out.println("Number of assigned Id‘s: "+ IdFactory.getNoOfAssignedIds());
+	
+	    Student student3 = new Student("Anne Müller", 
+	    								new Location("Meisenstr. 92", 33333, "Bielefeld"), 
+	    								new Location("Finkenstr. 9", 44444, "Gütersloh")
+	    				   );
+	    
+	    System.out.println(student3);
+	}
 
-//        student1.setId(10001);
-//        student1.setName("Hans", "Erster-Test");
-
-//        System.out.println(student1.getName() + " (" + student1.getId() + ")");
-//        System.out.println(studi4.toString());
-//        System.out.println(studi5.toString());
-
-
-        System.out.println("Number of available Id's: "+ IdFactory.getNoOfAvailableIds());
-        System.out.println("Number of assigned Id‘s:"+ IdFactory.getNoOfAssignedIds());
-
-        Student student3 = new Student("Simon", 
-                                        new Location("Meisenstr. 92", 33333, "Bielefeld"),
-                                        new Location("Ahrstr. 92", 44444, "Aachen"));
-
-        System.out.println(student3);
-    }
 }
