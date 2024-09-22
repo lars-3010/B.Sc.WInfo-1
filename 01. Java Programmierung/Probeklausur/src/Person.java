@@ -27,7 +27,7 @@ public class Person implements Ageable{
 
     @Override
     public String toString() {
-        return "Name: " + name + ", Geburtsjahr: " + yearOfBirth + ", Alter: " + getAge();
+        return name + ", " + yearOfBirth + ", " + getAge() + ", ";
     }
 
     @Override
