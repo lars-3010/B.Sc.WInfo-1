@@ -1,3 +1,4 @@
+package information;
 public enum Instrument {
     Brass("Blechblasinstrument"),
     Keyboard("Tasteninstrument"),

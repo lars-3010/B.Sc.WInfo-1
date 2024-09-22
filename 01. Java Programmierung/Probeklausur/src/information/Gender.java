@@ -1,3 +1,4 @@
+package information;
 public enum Gender {
     male("männlich"),
     female("weiblich"),
