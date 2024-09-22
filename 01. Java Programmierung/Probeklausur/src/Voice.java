@@ -1,14 +1,12 @@
-
-
 import information.Gender;
 
 public enum Voice {
     Soprano("Sopran", Gender.female),
-    Alto("Alt"),
-    Tenor("Tenor"),
-    Bass("Bass");
+    Alto("Alt", Gender.female),
+    Tenor("Tenor", Gender.male),
+    Bass("Bass", Gender.male);
 
-    private final String germanName;s
+    private final String germanName;
 
     
 }
