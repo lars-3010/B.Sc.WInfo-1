@@ -21,14 +21,4 @@
 
 # virtual machine crash logs
 hs_err_pid*
-
-# IDE-specific files (e.g., for IntelliJ IDEA or Eclipse)
-.idea/
-*.iml
-.classpath
-.project
-.settings/
-
-# Build directories
-target/
-build/
+replay_pid*

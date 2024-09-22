@@ -1,2 +1,1 @@
-# B.Sc.WInfo
-Learning Programming for bachelor degree
+# B.Sc.WInfo-1
