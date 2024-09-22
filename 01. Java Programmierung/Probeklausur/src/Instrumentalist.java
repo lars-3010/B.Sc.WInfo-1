@@ -10,4 +10,8 @@ public class Instrumentalist extends Musician {
     public boolean isSoloist() {
         return true;
     }
+
+    public String toString() {
+        return super.toString();
+    }
 }

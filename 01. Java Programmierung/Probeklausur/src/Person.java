@@ -1,4 +1,6 @@
-public class Person{
+import java.time.LocalDate;
+
+public class Person implements Ageable{
     private String name;
     private int yearOfBirth;
 
@@ -23,8 +25,14 @@ public class Person{
         this.yearOfBirth = yearOfBirth;
     }
 
+    @Override
     public String toString() {
-        return "name: " + name + "yearOfBirth: " + yearOfBirth;
+        return "Name: " + name + ", Geburtsjahr: " + yearOfBirth + ", Alter: " + getAge();
+    }
+
+    @Override
+    public int getAge() {
+        return LocalDate.now().getYear() - yearOfBirth;
     }
 }
 

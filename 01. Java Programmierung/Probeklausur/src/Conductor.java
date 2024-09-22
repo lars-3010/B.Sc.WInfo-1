@@ -6,4 +6,8 @@ public class Conductor extends Musician {
     public boolean isSoloist() {
         return false;
     }
+
+    public String toString() {
+        return super.toString();
+    }
 }
