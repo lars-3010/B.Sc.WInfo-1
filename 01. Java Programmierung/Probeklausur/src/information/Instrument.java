@@ -1,14 +1,15 @@
 package information;
+
 public enum Instrument {
-    Brass("Blechblasinstrument"),
-    Keyboard("Tasteninstrument"),
-    Percussion("Schlagzeug"),
-    String("Streichinstrument"),
-    Woodwind("Holzblasinstrument");
+    BRASS("Blechblasinstrument"),
+    KEYBOARD("Tasteninstrument"),
+    PERCUSSION("Schlagzeug"),
+    STRING("Streichinstrument"),
+    WOODWIND("Holzblasinstrument");
 
-    private final String germanName;
+    private String germanName;
 
-    Instrument(String germanName) {
+    private Instrument(String germanName) {
         this.germanName = germanName;
     }
 

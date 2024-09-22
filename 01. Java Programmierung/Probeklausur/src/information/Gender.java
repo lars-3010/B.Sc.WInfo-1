@@ -1,12 +1,13 @@
 package information;
+
 public enum Gender {
-    male("männlich"),
-    female("weiblich"),
-    diverse("divers");
+    MALE("männlich"),
+    FEMALE("weiblich"),
+    DIVERSE("divers");
 
-    private final String germanName;
+    private String germanName;
 
-    Gender(String germanName) {
+    private Gender(String germanName) {
         this.germanName = germanName;
     }
 
