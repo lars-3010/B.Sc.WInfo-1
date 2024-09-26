@@ -14,12 +14,17 @@ public class Article {
         this.price = price;
     }
 
+    // Überladener Konstruktor ohne Lagerbestandsparameter
+    public Article(int id, String name, int price) {
+        this(id, name, 0, price); // Initialisiert den Lagerbestand mit 0
+    }
+
     // Getter & Setter
     public int getId() {
         return this.id;
     }
 
-    public void setId(int id) {
+    private void setId(int id) {
         this.id = id;
     }
 
@@ -45,5 +50,15 @@ public class Article {
 
     public void setPrice(int price) {
         this.price = price;
+    }
+
+    @Override
+    public String toString() {
+        return "Article{" +
+                "id=" + id +
+                ", name='" + name + '\'' +
+                ", stock=" + stock +
+                ", price=" + price +
+                '}';
     }
 }
