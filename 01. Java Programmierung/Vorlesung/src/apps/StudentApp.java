@@ -1,4 +1,5 @@
 package apps;
+import model.Student;
 
 public class StudentApp {
     public static void main(String[] args) {

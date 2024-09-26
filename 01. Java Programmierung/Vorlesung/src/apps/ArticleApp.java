@@ -1,4 +1,5 @@
 package apps;
+import model.Article;
 
 public class ArticleApp {
     public static void main(String[] args) {
