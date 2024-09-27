@@ -1,9 +1,9 @@
 package apps;
+import model.IdRangeException;
 import model.Student;
 
 public class StudentApp {
-    public static void main(String[] args) {
-
+    public static void main(String[] args) throws IdRangeException{
         Student st1 = new Student("Andrea Schmidt");
         System.out.println(st1.getName() + " (" + st1.getId() + ")");
 
