@@ -10,6 +10,9 @@ public class Article {
     //private static int nextId = FIRST_ID;
 
     // Konstruktor
+    public Article() {
+    }
+
     public Article(int id, String name, int stock, int price) {
         this.name = name;
         this.stock = stock;
@@ -74,5 +77,20 @@ public class Article {
                 ", stock=" + stock +
                 ", price=" + price +
                 '}';
+    }
+
+    public void addToStock(int amount) {
+        this.stock += amount;
+    }
+    public void takeFromStock(int amount) {
+        if (this.stock >= amount) {
+            this.stock -= amount;
+        }
+        else {
+            System.out.println("Nicht genügend Bestand vorhanden");
+        }
+    }
+    public double getInventoryValue() {
+        return this.stock * this.price;
     }
 }
