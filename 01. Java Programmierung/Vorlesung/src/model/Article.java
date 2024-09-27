@@ -5,18 +5,32 @@ public class Article {
     private String name;
     private int stock;
     private int price;
+    public static final int LAST_ID = 99999;
+    public static final int FIRST_ID = 10001;
+    //private static int nextId = FIRST_ID;
 
     // Konstruktor
     public Article(int id, String name, int stock, int price) {
-        this.id = id;
         this.name = name;
         this.stock = stock;
         this.price = price;
+        if (id>FIRST_ID && id<LAST_ID) {
+            this.id = id;
+        }
+        else {
+            this.id = 0;
+        }
     }
 
     // Überladener Konstruktor ohne Lagerbestandsparameter
     public Article(int id, String name, int price) {
         this(id, name, 0, price); // Initialisiert den Lagerbestand mit 0
+        if (id>FIRST_ID && id<LAST_ID) {
+            this.id = id;
+        }
+        else {
+            this.id = 0;
+        }
     }
 
     // Getter & Setter
