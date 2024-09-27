@@ -1,48 +1,41 @@
 package model;
 
-public class Article {
+public class Article{
     private int id;
     private String name;
     private int stock;
     private int price;
-    public static final int LAST_ID = 99999;
-    public static final int FIRST_ID = 10001;
-    //private static int nextId = FIRST_ID;
+    private StorageLocation storageLocation;
+    private static final int LAST_ID = 99999;
+    private static final int FIRST_ID = 10001;
+    private static int nextId = FIRST_ID;
 
-    // Konstruktor
+    // Standardkonstruktor
     public Article() {
+        this.id = generateNextId();
     }
 
-    public Article(int id, String name, int stock, int price) {
+    // Konstruktor mit Name, Stock, Price und StorageLocation
+    public Article(String name, int stock, int price, StorageLocation storageLocation) {
         this.name = name;
         this.stock = stock;
         this.price = price;
-        if (id>FIRST_ID && id<LAST_ID) {
-            this.id = id;
-        }
-        else {
-            this.id = 0;
-        }
+        this.storageLocation = storageLocation;
+        this.id = generateNextId();
     }
 
-    // Überladener Konstruktor ohne Lagerbestandsparameter
-    public Article(int id, String name, int price) {
-        this(id, name, 0, price); // Initialisiert den Lagerbestand mit 0
-        if (id>FIRST_ID && id<LAST_ID) {
-            this.id = id;
-        }
-        else {
-            this.id = 0;
-        }
+    // Konstruktor mit Name, Price und StorageLocation
+    public Article(String name, int price, StorageLocation storageLocation) {
+        this.name = name;
+        this.price = price;
+        this.stock = 0;
+        this.storageLocation = storageLocation;
+        this.id = generateNextId();
     }
 
-    // Getter & Setter
+    // Getter und Setter
     public int getId() {
         return this.id;
-    }
-
-    private void setId(int id) {
-        this.id = id;
     }
 
     public String getName() {
@@ -69,6 +62,14 @@ public class Article {
         this.price = price;
     }
 
+    public StorageLocation getStorageLocation() {
+        return this.storageLocation;
+    }
+
+    public void setStorageLocation(StorageLocation storageLocation) {
+        this.storageLocation = storageLocation;
+    }
+
     @Override
     public String toString() {
         return "Article{" +
@@ -76,21 +77,31 @@ public class Article {
                 ", name='" + name + '\'' +
                 ", stock=" + stock +
                 ", price=" + price +
+                ", storageLocation=" + storageLocation +
                 '}';
     }
 
     public void addToStock(int amount) {
         this.stock += amount;
     }
+
     public void takeFromStock(int amount) {
         if (this.stock >= amount) {
             this.stock -= amount;
-        }
-        else {
+        } else {
             System.out.println("Nicht genügend Bestand vorhanden");
         }
     }
+
     public double getInventoryValue() {
         return this.stock * this.price;
+    }
+
+    private static int generateNextId() {
+        if (nextId <= LAST_ID) {
+            return nextId++;
+        } else {
+            throw new RuntimeException("Keine weiteren Artikelnummern verfügbar.");
+        }
     }
 }

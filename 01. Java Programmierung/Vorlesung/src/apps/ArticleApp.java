@@ -1,5 +1,6 @@
 package apps;
 import model.Article;
+import model.StorageLocation;
 
 public class ArticleApp {
     public static void main(String[] args) {
@@ -21,21 +22,25 @@ public class ArticleApp {
         System.out.println(grape);
         */
 
-        Article article = new Article();
-        article.setStock(10);
-        article.setPrice(5);
+        StorageLocation location1 = new StorageLocation("Lager A", 1);
+        StorageLocation location2 = new StorageLocation("Lager B", 2);
 
-        System.out.println("Anfangsbestand: " + article.getStock());
-        System.out.println("Anfangsbestandwert: " + article.getInventoryValue());
+        Article article1 = new Article("Artikel1", 10, 5, location1);
+        Article article2 = new Article("Artikel2", 20, location2);
+        Article article3 = new Article("Artikel3", 15, 10, location1);
 
-        article.addToStock(5);
-        System.out.println("Bestand nach Hinzufügen: " + article.getStock());
-        System.out.println("Bestandwert nach Hinzufügen: " + article.getInventoryValue());
+        System.out.println(article1);
+        System.out.println(article2);
+        System.out.println(article3);
 
-        article.takeFromStock(3);
-        System.out.println("Bestand nach Entnahme: " + article.getStock());
-        System.out.println("Bestandwert nach Entnahme: " + article.getInventoryValue());
+        article1.addToStock(5);
+        System.out.println("Bestand nach Hinzufügen: " + article1.getStock());
+        System.out.println("Bestandwert nach Hinzufügen: " + article1.getInventoryValue());
 
-        article.takeFromStock(20); // Test für nicht genügend Bestand
+        article1.takeFromStock(3);
+        System.out.println("Bestand nach Entnahme: " + article1.getStock());
+        System.out.println("Bestandwert nach Entnahme: " + article1.getInventoryValue());
+
+        article1.takeFromStock(20); // Test für nicht genügend Bestand
     }
 }
