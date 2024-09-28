@@ -1,10 +1,11 @@
-import information.*;
+import information.Voice;
 
 public class Singer extends Musician{
     private Voice voice;
 
-    public Singer(String name, int yearOfBirth) {
+    public Singer(String name, int yearOfBirth, Voice voice) {
         super(name, yearOfBirth);
+        this.voice = voice;
     }
 
     public boolean isSoloist() {
@@ -12,6 +13,6 @@ public class Singer extends Musician{
     }
 
     public String toString() {
-        return super.toString();
+        return super.toString() + " und ist: "+this.voice;
     }
 }

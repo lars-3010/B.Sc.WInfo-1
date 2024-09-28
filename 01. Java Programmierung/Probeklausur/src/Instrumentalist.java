@@ -1,10 +1,12 @@
-import information.*;
+import information.Instrument;
 
 public class Instrumentalist extends Musician {
-    private Voice voice;
 
-    public Instrumentalist(String name, int yearOfBirth) {
+    private Instrument instrument;
+
+    public Instrumentalist(String name, int yearOfBirth, Instrument instrument) {
         super(name, yearOfBirth);
+        this.instrument = instrument;
     }
 
     public boolean isSoloist() {
@@ -12,6 +14,6 @@ public class Instrumentalist extends Musician {
     }
 
     public String toString() {
-        return super.toString();
+        return super.toString() + " und spielt: " + this.instrument;
     }
 }
