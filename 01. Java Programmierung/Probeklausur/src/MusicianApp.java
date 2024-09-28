@@ -5,6 +5,11 @@ import information.Voice;
 public class MusicianApp {
 
     public static void main(String[] args) {
+        int[] array1 = new int[] { 1, 2, 3, 5};
+        for(int entries : array1){
+            System.out.println(entries);
+        }
+        
         // Person marisa = new Person("Marisa", 2000);
         Ageable marisa = new Instrumentalist("Marisa", 2008, Instrument.WOODWIND);
         Musician frida = new Singer("Frida", 1989, Voice.SOPRANO);
