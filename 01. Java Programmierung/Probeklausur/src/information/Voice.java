@@ -16,7 +16,7 @@ public enum Voice {
 
     @Override
     public String toString() {
-        return germanName;
+        return this.germanName;
     }
     
     public Gender getGender() {
